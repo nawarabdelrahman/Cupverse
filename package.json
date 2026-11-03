@@ -1,0 +1,15 @@
+{
+  "name": "cupverse",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.11.0",
+    "express": "^4.19.2",
+    "mongodb": "^7.8.0",
+    "multer": "^2.0.0"
+  }
+}

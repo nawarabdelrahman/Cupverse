@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cupverse – مجك عندنا</title>
+<link href="public/vendor/bootstrap.rtl.min.css" rel="stylesheet">
+<link href="public/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+<link href="public/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="toast-box" class="toast-container position-fixed bottom-0 start-0 p-3"></div>
+
+<nav class="navbar navbar-expand-lg sticky-top cv-nav" id="main-nav">
+  <div class="container">
+    <a class="navbar-brand brand" href="#home"><i class="fa-solid fa-mug-hot"></i> Cupverse</a>
+    <div class="d-flex d-lg-none ms-auto me-2"><a href="#cart" class="btn cart-btn position-relative"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a></div>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nv"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nv">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="#shop">جميع المنتجات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#custom">هدايا مخصصة</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+      </ul>
+      <a href="#cart" class="btn cart-btn position-relative d-none d-lg-inline-block"><i class="fa-solid fa-bag-shopping"></i><span class="badge cart-count">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- HOME -->
+<section class="view" id="v-home">
+  <div class="hero"><div class="container"><div class="row align-items-center g-4">
+    <div class="col-lg-6">
+      <h1>خلي هديتك تحكي حكايتك <i class="fa-solid fa-heart"></i></h1>
+      <p class="lead">اختار هديتك، ضيف لمستك الخاصة، وخلي كل مناسبة ذكرى متتنسيش.</p>
+      <a href="#shop" class="btn btn-cv btn-lg">اكتشف الهدايا</a>
+    </div>
+    <div class="col-lg-6 text-center hero-art"><span class="mx-2"><i class="fa-solid fa-mug-hot"></i></span><span class="mx-2"><i class="fa-solid fa-gift"></i></span><span class="mx-2"><i class="fa-solid fa-heart"></i></span><span class="mx-2"><i class="fa-solid fa-wallet"></i></span></div>
+  </div></div></div>
+  <div class="container py-5">
+    <h2 class="sec-title">التصنيفات</h2>
+    <div class="row g-3" id="cat-grid"></div>
+    <h2 class="sec-title mt-5">أحدث المنتجات</h2>
+    <div class="row g-4" id="home-products"></div>
+  </div>
+  <div class="custom-band"><div class="container text-center py-5">
+    <h2>صمم هديتك بنفسك! <i class="fa-solid fa-palette"></i></h2>
+    <p>أضف اسمًا أو صورة أو رسمة على المنتج واحنا نطبعها لك بجودة عالية.</p>
+    <a href="#custom" class="btn btn-light btn-lg fw-bold">اطلب هديتك المخصصة</a>
+  </div></div>
+</section>
+
+<!-- SHOP -->
+<section class="view container py-5" id="v-shop">
+  <h2 class="sec-title">جميع المنتجات</h2>
+  <div class="row g-2 mb-4">
+    <div class="col-md-8"><div class="d-flex flex-wrap gap-2" id="shop-filters"></div></div>
+    <div class="col-md-4"><input id="shop-search" class="form-control" placeholder="ابحث عن منتج..."></div>
+  </div>
+  <div class="row g-4" id="shop-products"></div>
+</section>
+
+<!-- PRODUCT -->
+<section class="view container py-5" id="v-product"></section>
+
+<!-- CUSTOM -->
+<section class="view container py-5" id="v-custom">
+  <h2 class="sec-title">اطلب هديتك المخصصة</h2>
+  <form id="custom-form" class="cv-card p-4 mx-auto" style="max-width:640px" novalidate>
+    <div class="mb-3"><label class="form-label">اختر المنتج</label><select id="cu-prod" class="form-select" required></select></div>
+    <div class="mb-3"><label class="form-label">الاسم أو النص المطلوب طباعته</label><input id="cu-text" class="form-control" required minlength="2" maxlength="60"><div class="invalid-feedback">اكتب نصًا من حرفين على الأقل</div></div>
+    <div class="mb-3"><label class="form-label">صورة / تصميم (اختياري)</label><input id="cu-file" type="file" accept="image/*" class="form-control"></div>
+    <div class="mb-3"><label class="form-label">وصف التصميم</label><textarea id="cu-note" class="form-control" rows="3" required minlength="5"></textarea><div class="invalid-feedback">اوصف التصميم المطلوب</div></div>
+    <button class="btn btn-cv w-100">أضف إلى السلة</button>
+  </form>
+</section>
+
+<!-- ABOUT -->
+<section class="view container py-5 text-center" id="v-about">
+  <h2 class="sec-title">من نحن</h2>
+  <p class="lead mx-auto" style="max-width:640px">Cupverse – مجك عندنا براند مصري للهدايا الشخصية. بنحول أفكارك وصورك وأسماء اللي بتحبهم لهدايا مميزة: مجات، زمزميات، محافظ وأكتر. هديتك بطريقتك!</p>
+</section>
+
+<!-- CONTACT -->
+<section class="view container py-5" id="v-contact">
+  <h2 class="sec-title">تواصل معنا</h2>
+  <form id="contact-form" class="cv-card p-4 mx-auto" style="max-width:560px" novalidate>
+    <div class="mb-3"><label class="form-label">الاسم</label><input id="ct-name" class="form-control" required minlength="2"><div class="invalid-feedback">الاسم مطلوب</div></div>
+    <div class="mb-3"><label class="form-label">الرسالة</label><textarea id="ct-msg" class="form-control" rows="4" required minlength="5"></textarea><div class="invalid-feedback">اكتب رسالتك</div></div>
+    <button class="btn btn-cv w-100"><i class="fa-brands fa-whatsapp"></i> إرسال عبر واتساب</button>
+  </form>
+</section>
+
+<!-- CART -->
+<section class="view container py-5" id="v-cart">
+  <h2 class="sec-title">سلة المشتريات</h2>
+  <div class="row g-4">
+    <div class="col-lg-7"><div id="cart-items"></div></div>
+    <div class="col-lg-5">
+      <form id="order-form" class="cv-card p-4" novalidate>
+        <h5 class="mb-3">بيانات الطلب</h5>
+        <div class="mb-2"><input id="o-name" class="form-control" placeholder="الاسم" required minlength="3"><div class="invalid-feedback">الاسم مطلوب</div></div>
+        <div class="mb-2"><input id="o-phone" class="form-control" placeholder="رقم الهاتف (01xxxxxxxxx)" required pattern="01[0-9]{9}" inputmode="numeric"><div class="invalid-feedback">رقم هاتف مصري صحيح (11 رقم)</div></div>
+        <div class="mb-2"><textarea id="o-addr" class="form-control" rows="2" placeholder="العنوان بالتفصيل" required minlength="8"></textarea><div class="invalid-feedback">العنوان مطلوب</div></div>
+        <div class="mb-3"><textarea id="o-note" class="form-control" rows="2" placeholder="ملاحظات التخصيص (اختياري)"></textarea></div>
+        <div class="d-flex justify-content-between fw-bold fs-5 mb-3"><span>الإجمالي</span><span id="cart-total">0 EGP</span></div>
+        <button class="btn btn-success w-100"><i class="fa-brands fa-whatsapp"></i> أرسل الطلب عبر واتساب</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN -->
+<section class="view" id="v-admin"></section>
+</main>
+
+<footer class="text-center py-4 small" id="main-footer">© Cupverse – مجك عندنا · هديتك بطريقتك! <a href="#admin" class="text-muted ms-2">Admin</a></footer>
+
+<script src="public/vendor/bootstrap.bundle.min.js"></script>
+<script src="public/script.js"></script>
+</body>
+</html>
